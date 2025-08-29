@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Pequenas customizações */
+:root{
+	--color-primary-900: #010409;
+	--color-primary-800: #1f2937;
+}
+
+@layer base {
+	body { @apply bg-slate-50; }
+}
+
+@layer utilities {
+	.bg-primary-900 { background-color: var(--color-primary-900) !important }
+	.bg-primary-800 { background-color: var(--color-primary-800) !important }
+	.text-primary-900 { color: var(--color-primary-900) !important }
+	.text-primary-800 { color: var(--color-primary-800) !important }
+	.network-line { stroke-dasharray: 400; stroke-dashoffset: 400; animation: dash 6s linear infinite; }
+	.network-node { transform-origin: center; animation: pulse 2.5s ease-in-out infinite; }
+
+	@keyframes dash {
+		to { stroke-dashoffset: 0; }
+	}
+
+	@keyframes pulse {
+		0%,100% { transform: scale(1); opacity: 0.8 }
+		50% { transform: scale(1.4); opacity: 1 }
+	}
+
+	/* smooth scroll and section arrival animation */
+	.scroll-smooth { scroll-behavior: smooth }
+
+	.section-arrive { transform: translateY(12px); opacity: 0; transition: transform .6s ease, opacity .6s ease }
+	.section-inview .section-arrive { transform: translateY(0); opacity: 1 }
+
+	/* anchor offset for fixed header (6rem) */
+	.scroll-mt-header { scroll-margin-top: 6rem }
+}

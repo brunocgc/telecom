@@ -1,0 +1,47 @@
+{
+  "name": "telecom",
+  "version": "0.0.1",
+  "description": "Landing page para empresa de Telecom (React 19 + Tailwind + Radix + Font Awesome)",
+  "license": "MIT",
+  "author": "Bruno Cardoso",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.0",
+    "@fortawesome/free-solid-svg-icons": "^6.5.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@radix-ui/react-accordion": "^1.0.0",
+    "@radix-ui/react-dialog": "^1.0.0",
+    "@radix-ui/react-tabs": "^1.0.0",
+    "@radix-ui/react-toast": "^1.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.62.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@hookform/resolvers": "^5.2.1",
+    "@tailwindcss/postcss": "^4.1.12",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.0.0",
+    "jsdom": "^26.1.0",
+    "postcss": "^8.4.0",
+    "prettier": "^2.8.0",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.2.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.0.0"
+  }
+}
