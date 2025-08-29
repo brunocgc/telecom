@@ -1,11 +1,11 @@
-// Vercel Serverless Function: proxy to an external webhook (set SUBMIT_WEBHOOK env var in deployment)
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' })
 
   const webhook = process.env.SUBMIT_WEBHOOK
   if (!webhook) {
-    console.error('SUBMIT_WEBHOOK not configured')
-    return res.status(500).json({ error: 'Webhook not configured' })
+    // Do not expose the webhook URL in the response. Log for maintainers and return a generic error.
+    console.error('SUBMIT_WEBHOOK not configured for submitContact function')
+    return res.status(503).json({ error: 'Submission endpoint not configured. Please contact the site administrator.' })
   }
 
   try {
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     }
     return res.status(200).json({ ok: true })
   } catch (err) {
-    console.error(err)
+    console.error('Error forwarding contact submission:', err)
     return res.status(500).json({ error: 'Internal error' })
   }
 }
