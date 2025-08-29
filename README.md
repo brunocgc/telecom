@@ -30,3 +30,5 @@ npm run dev
 ```
 
 Stack: React 19, Vite, TailwindCSS, Radix, Font Awesome.
+
+Visualizar o site: https://telecom-beige.vercel.app/
